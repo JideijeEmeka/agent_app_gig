@@ -11,7 +11,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("data")),
+      body: Center(child: Text("data here")),
     );
   }
 }
