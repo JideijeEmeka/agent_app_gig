@@ -1,17 +1,17 @@
 import 'package:agent_app/helpers/app_colors.dart';
-import 'package:agent_app/views/register_step2_view.dart';
+import 'package:agent_app/views/identity_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterStep1View extends StatefulWidget {
-  const RegisterStep1View({Key? key}) : super(key: key);
+class AccountDetailsView extends StatefulWidget {
+  const AccountDetailsView({Key? key}) : super(key: key);
 
   @override
-  _RegisterStep1ViewState createState() => _RegisterStep1ViewState();
+  _AccountDetailsViewState createState() => _AccountDetailsViewState();
 }
 
-class _RegisterStep1ViewState extends State<RegisterStep1View> {
+class _AccountDetailsViewState extends State<AccountDetailsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,7 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
               Padding(
                 padding: const EdgeInsets.only(top: 7),
                 child: Text(
-                  "Step 1 of 3",
+                  "Step 3 of 3",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 14,
@@ -46,11 +46,11 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                           fontStyle: FontStyle.normal)),
                 ),
               ),
-              //first name
+              //account
               Padding(
                 padding: const EdgeInsets.only(top: 19, bottom: 4),
                 child: Text(
-                  "First Name",
+                  "Account Name",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 12,
@@ -72,11 +72,11 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4))),
               ),
-              //last name
+              //account number
               Padding(
                 padding: const EdgeInsets.only(top: 19, bottom: 4),
                 child: Text(
-                  "Last Name",
+                  "Account number",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 12,
@@ -98,11 +98,11 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4))),
               ),
-              //company
+              //bank
               Padding(
                 padding: const EdgeInsets.only(top: 19, bottom: 4),
                 child: Text(
-                  "Company",
+                  "Bank",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 12,
@@ -124,37 +124,11 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4))),
               ),
-              //phone number
+              //bvn
               Padding(
                 padding: const EdgeInsets.only(top: 19, bottom: 4),
                 child: Text(
-                  "Enter Mobile Number",
-                  style: GoogleFonts.inter(
-                      textStyle: const TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.textColor,
-                          fontStyle: FontStyle.normal)),
-                ),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    hintText: "Mobile number",
-                    hintStyle: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.hintTextColor,
-                            fontStyle: FontStyle.normal)),
-                    contentPadding: const EdgeInsets.only(left: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4))),
-              ),
-              //address
-              Padding(
-                padding: const EdgeInsets.only(top: 19, bottom: 4),
-                child: Text(
-                  "Address",
+                  "BVN",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 12,
@@ -177,12 +151,12 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                         borderRadius: BorderRadius.circular(4))),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 28),
+                padding: const EdgeInsets.only(top: 115, bottom: 28),
                 child: btnWidget(context, "Next", onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const RegisterStep2View()));
+                          builder: (context) => const IdentityView()));
                 }),
               ),
               Row(
