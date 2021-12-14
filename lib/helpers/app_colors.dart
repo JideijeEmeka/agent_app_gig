@@ -12,4 +12,6 @@ class AppColors {
   static const hintTextColor = Color(0xFF999999);
   static const appBarTextColor = Color(0xFF15537D);
   static const lightBackgroundColor = Color(0xFFF3F3F2);
+  static const redColor = Color(0xFFFF0F00);
+  static const greenColor = Color(0xFF00A912);
 }

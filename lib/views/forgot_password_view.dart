@@ -1,5 +1,4 @@
 import 'package:agent_app/helpers/app_colors.dart';
-import 'package:agent_app/views/sign_in.dart';
 import 'package:agent_app/views/verify_forgotten_email_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';

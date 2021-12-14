@@ -1,6 +1,5 @@
 import 'package:agent_app/helpers/app_colors.dart';
-import 'package:agent_app/views/congratulations_view.dart';
-import 'package:agent_app/views/order_view.dart';
+import 'package:agent_app/views/dashboard.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -84,7 +83,7 @@ class _VerifyEmailViewState extends State<CreatePasswordView> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const OrderView()));
+                          builder: (context) => const Dashboard()));
                 }),
               ),
             ],

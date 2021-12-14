@@ -46,7 +46,7 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
                       radius: 6,
                       backgroundColor: AppColors.appBarTextColor,
                     ),
-                    ImageIcon(AssetImage("assets/icons/Line5.png")),
+                    ImageIcon(AssetImage("assets/icons/line.png")),
                     CircleAvatar(
                       radius: 6,
                       backgroundColor: AppColors.headerColor,
@@ -179,14 +179,19 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
               ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
                   onPressed: () {},
                   child: const Text("Reject"),
                   style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 12, horizontal: 30),
+                    side: const BorderSide(color: AppColors.redColor),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4)),
-                    primary: AppColors.appBarTextColor,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    primary: AppColors.redColor,
                     textStyle: GoogleFonts.inter(
                         textStyle: const TextStyle(
                             fontSize: 16,
@@ -194,7 +199,28 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
                             fontStyle: FontStyle.normal)),
                   ),
                 ),
-                Text("data")
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Accept"),
+                    style: OutlinedButton.styleFrom(
+                      shadowColor: AppColors.appBarTextColor,
+                      elevation: 5,
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 12, horizontal: 30),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4)),
+                      primary: AppColors.whiteColor,
+                      backgroundColor: AppColors.appBarTextColor,
+                      textStyle: GoogleFonts.inter(
+                          textStyle: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FontStyle.normal)),
+                    ),
+                  ),
+                ),
               ],
             )
           ],

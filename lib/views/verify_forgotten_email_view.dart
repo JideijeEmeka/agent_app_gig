@@ -1,5 +1,4 @@
 import 'package:agent_app/helpers/app_colors.dart';
-import 'package:agent_app/views/congratulations_view.dart';
 import 'package:agent_app/views/create_password_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';

@@ -89,25 +89,52 @@ Widget newOrdersTabView(BuildContext context) {
                               ],
                             ),
                           ),
-                          TextButton(
-                              onPressed: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const OrderDetailsView())),
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                                minimumSize: Size.zero,
-                                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                primary: AppColors.textColor,
-                                textStyle: GoogleFonts.inter(
-                                    textStyle: const TextStyle(
-                                        decoration: TextDecoration.underline,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        fontStyle: FontStyle.normal)),
-                              ),
-                              child: const Text("Details"))
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              TextButton(
+                                  onPressed: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const OrderDetailsView())),
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                    minimumSize: Size.zero,
+                                    tapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    primary: AppColors.textColor,
+                                    textStyle: GoogleFonts.inter(
+                                        textStyle: const TextStyle(
+                                            decoration:
+                                                TextDecoration.underline,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                            fontStyle: FontStyle.normal)),
+                                  ),
+                                  child: const Text("Details")),
+                              Row(
+                                children: [
+                                  const CircleAvatar(
+                                    radius: 5,
+                                    backgroundColor: AppColors.greenColor,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: Text(
+                                      "Available",
+                                      style: GoogleFonts.inter(
+                                          textStyle: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w400,
+                                              color: AppColors.greenColor,
+                                              fontStyle: FontStyle.normal)),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
