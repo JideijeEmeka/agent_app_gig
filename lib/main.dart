@@ -1,7 +1,8 @@
-import 'package:agent_app/views/register.dart';
+import 'package:agent_app/views/register_step1_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -17,8 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Register(),
+      home: const RegisterStep1View(),
     );
   }
 }
-
