@@ -1,8 +1,10 @@
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/account_details_view.dart';
+import 'package:agent_app/views/sign_in.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class RegisterStep2View extends StatefulWidget {
   const RegisterStep2View({Key? key}) : super(key: key);
@@ -198,15 +200,23 @@ class _RegisterStep2ViewState extends State<RegisterStep2View> {
                             color: AppColors.lightGreyColor,
                             fontStyle: FontStyle.normal)),
                   ),
-                  Text(
-                    "Sign in",
-                    style: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.lightGreyColor,
-                            fontStyle: FontStyle.normal)),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        PageTransition(
+                            child: const SignInView(),
+                            type: PageTransitionType.leftToRight,
+                            duration: const Duration(milliseconds: 400))),
+                    child: Text(
+                      "Sign in",
+                      style: GoogleFonts.inter(
+                          textStyle: const TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.lightGreyColor,
+                              fontStyle: FontStyle.normal)),
+                    ),
                   ),
                 ],
               ),

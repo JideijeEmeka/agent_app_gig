@@ -72,7 +72,7 @@ class _HomeViewState extends State<HomeView> {
           body: SingleChildScrollView(
             child: Container(
               color: AppColors.mainColor,
-              height: MediaQuery.of(context).size.height * 0.1,
+              height: MediaQuery.of(context).size.height,
               child: TabBarView(children: [
                 newOrdersTabView(context),
                 pendingOrdersTabView(),

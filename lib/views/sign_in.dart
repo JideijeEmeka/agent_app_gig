@@ -1,8 +1,10 @@
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/forgot_password_view.dart';
+import 'package:agent_app/views/register_step1_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({Key? key}) : super(key: key);
@@ -161,15 +163,23 @@ class _SignInViewState extends State<SignInView> {
                             color: AppColors.lightGreyColor,
                             fontStyle: FontStyle.normal)),
                   ),
-                  Text(
-                    "Register",
-                    style: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.lightGreyColor,
-                            fontStyle: FontStyle.normal)),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        PageTransition(
+                            child: const RegisterStep1View(),
+                            type: PageTransitionType.leftToRight,
+                            duration: const Duration(milliseconds: 400))),
+                    child: Text(
+                      "Register",
+                      style: GoogleFonts.inter(
+                          textStyle: const TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.lightGreyColor,
+                              fontStyle: FontStyle.normal)),
+                    ),
                   ),
                 ],
               ),
