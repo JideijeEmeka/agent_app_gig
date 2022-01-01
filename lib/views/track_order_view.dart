@@ -381,7 +381,7 @@ class _TrackOrderViewState extends State<TrackOrderView> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 9),
+                          padding: const EdgeInsets.only(top: 9, bottom: 100),
                           child: Text(
                             "Order delivered at the\nware house in canada",
                             style: GoogleFonts.inter(

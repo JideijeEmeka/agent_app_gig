@@ -2,7 +2,6 @@ import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/home_view.dart';
 import 'package:agent_app/views/my_account_view.dart';
 import 'package:agent_app/views/orders_view.dart';
-import 'package:agent_app/views/register_step1_view.dart';
 import 'package:agent_app/views/track_order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

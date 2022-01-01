@@ -1,4 +1,4 @@
-import 'package:agent_app/views/register_step1_view.dart';
+import 'package:agent_app/views/onboarding1_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const RegisterStep1View(),
+      home: const Onboarding1(),
     );
   }
 }
