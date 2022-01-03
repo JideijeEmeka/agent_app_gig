@@ -18,16 +18,15 @@ class _VerifyEmailViewState extends State<CreatePasswordView> {
       backgroundColor: AppColors.mainColor,
       body: SingleChildScrollView(
         child: Container(
-          alignment: Alignment.center,
-          margin: const EdgeInsets.symmetric(horizontal: 23),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               const SizedBox(
-                height: 180,
+                height: 150,
               ),
               Image.asset("assets/images/newpass.png"),
               Padding(
-                padding: const EdgeInsets.only(top: 15, bottom: 15),
+                padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Text(
                   "Create new password",
                   style: GoogleFonts.inter(
@@ -42,14 +41,14 @@ class _VerifyEmailViewState extends State<CreatePasswordView> {
                 "Your new password must be different \nfrom the previously used one",
                 style: GoogleFonts.inter(
                     textStyle: const TextStyle(
-                        fontSize: 12,
+                        fontSize: 13.5,
                         height: 1.5,
                         fontWeight: FontWeight.w400,
                         color: AppColors.blackColor,
                         fontStyle: FontStyle.normal)),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15, bottom: 15),
+                padding: const EdgeInsets.symmetric(vertical: 15),
                 child: TextFormField(
                   decoration: InputDecoration(
                       hintText: "Enter new password",
@@ -78,7 +77,9 @@ class _VerifyEmailViewState extends State<CreatePasswordView> {
                         borderRadius: BorderRadius.circular(4))),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15, bottom: 30),
+                padding: const EdgeInsets.only(
+                  top: 20,
+                ),
                 child: btnWidget(context, "Create new password", onTap: () {
                   Navigator.push(
                       context,
