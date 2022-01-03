@@ -61,7 +61,7 @@ class _Onboarding4State extends State<Onboarding4> {
                 child: const Text("Sign in"),
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 12,
+                    vertical: 18,
                   ),
                   side: const BorderSide(color: AppColors.appBarTextColor),
                   shape: RoundedRectangleBorder(

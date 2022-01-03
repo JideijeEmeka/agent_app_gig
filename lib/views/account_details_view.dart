@@ -18,7 +18,7 @@ class _AccountDetailsViewState extends State<AccountDetailsView> {
       backgroundColor: AppColors.mainColor,
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 23),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

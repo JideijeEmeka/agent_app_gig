@@ -1,8 +1,10 @@
 import 'package:agent_app/helpers/app_colors.dart';
+import 'package:agent_app/views/sign_in.dart';
 import 'package:agent_app/views/verify_forgotten_email_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({Key? key}) : super(key: key);
@@ -18,16 +20,16 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
       backgroundColor: AppColors.mainColor,
       body: SingleChildScrollView(
         child: Container(
-          alignment: Alignment.center,
-          margin: const EdgeInsets.symmetric(horizontal: 23),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 130,
+                height: 150,
               ),
               Image.asset("assets/images/lock.png"),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 44),
+                padding: const EdgeInsets.symmetric(vertical: 30),
                 child: Text(
                   "Forgot your password?",
                   style: GoogleFonts.inter(
@@ -39,12 +41,12 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 44),
+                padding: const EdgeInsets.only(bottom: 30),
                 child: Text(
                   "Enter your registered email below to \nrecieve passord reset information",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
-                          fontSize: 12,
+                          fontSize: 13.5,
                           height: 1.5,
                           fontWeight: FontWeight.w400,
                           color: AppColors.blackColor,
@@ -65,22 +67,31 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                         borderRadius: BorderRadius.circular(4))),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 44, bottom: 68),
+                padding: const EdgeInsets.only(top: 30, bottom: 40),
                 child: btnWidget(context, "Request email reset", onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const VerifyForgottenEmailView()));
+                          builder: (context) =>
+                              const VerifyForgottenEmailView()));
                 }),
               ),
-              Text(
-                "Go back to Login",
-                style: GoogleFonts.inter(
-                    textStyle: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.blackColor,
-                        fontStyle: FontStyle.normal)),
+              InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    PageTransition(
+                        child: const SignInView(),
+                        type: PageTransitionType.leftToRight,
+                        duration: const Duration(milliseconds: 400))),
+                child: Text(
+                  "Go back to Login",
+                  style: GoogleFonts.inter(
+                      textStyle: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.blackColor,
+                          fontStyle: FontStyle.normal)),
+                ),
               ),
             ],
           ),

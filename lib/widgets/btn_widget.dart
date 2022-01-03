@@ -12,7 +12,7 @@ Widget btnWidget(BuildContext context, text, {onTap}) {
         color: AppColors.btnColor,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12),
+        padding: const EdgeInsets.symmetric(vertical: 18),
         child: Text(
           text,
           textAlign: TextAlign.center,
