@@ -1,4 +1,5 @@
 import 'package:agent_app/helpers/app_colors.dart';
+import 'package:agent_app/views/order_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,7 +16,7 @@ class _TrackOrderViewState extends State<TrackOrderView> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 24),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -41,7 +42,7 @@ class _TrackOrderViewState extends State<TrackOrderView> {
                         fontStyle: FontStyle.normal)),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 27, bottom: 50),
+                padding: const EdgeInsets.only(top: 27, bottom: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -188,215 +189,125 @@ class _TrackOrderViewState extends State<TrackOrderView> {
                   ],
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: AppColors.appBarTextColor,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Picked up order",
-                            style: GoogleFonts.inter(
-                                textStyle: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    color: AppColors.whiteColor,
-                                    fontStyle: FontStyle.normal)),
-                          ),
-                          Text(
-                            "10:00 AM",
-                            style: GoogleFonts.inter(
-                                textStyle: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.hintTextColor,
-                                    fontStyle: FontStyle.normal)),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 9),
-                        child: Text(
-                          "Order picked up from \nwarehouse at Gbagada",
-                          style: GoogleFonts.inter(
-                              textStyle: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.hintTextColor,
-                                  fontStyle: FontStyle.normal)),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 47),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 16, horizontal: 16),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(color: AppColors.mainColor),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Order sent to airport",
-                              style: GoogleFonts.inter(
-                                  textStyle: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.textColor,
-                                      fontStyle: FontStyle.normal)),
-                            ),
-                            Text(
-                              "10:00 AM",
-                              style: GoogleFonts.inter(
-                                  textStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      color:
-                                          AppColors.textColor.withOpacity(0.6),
-                                      fontStyle: FontStyle.normal)),
-                            ),
-                          ],
-                        ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 9),
-                          child: Text(
-                            "Order has been sent to\nthe airport",
-                            style: GoogleFonts.inter(
-                                textStyle: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors.textColor.withOpacity(0.6),
-                                    fontStyle: FontStyle.normal)),
+                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          child: Row(
+                            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Image.asset("assets/images/chops.png"),
+                              const SizedBox(
+                                width: 13,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Order ID: 2346467666",
+                                      style: GoogleFonts.inter(
+                                          textStyle: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w700,
+                                              color: AppColors.textColor,
+                                              fontStyle: FontStyle.normal)),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 11),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "Quantity - 2",
+                                            style: GoogleFonts.inter(
+                                                textStyle: const TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w400,
+                                                    color:
+                                                        AppColors.hintTextColor,
+                                                    fontStyle:
+                                                        FontStyle.normal)),
+                                          ),
+                                          Text(
+                                            "Gbagada, Abuja",
+                                            style: GoogleFonts.inter(
+                                                textStyle: const TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w400,
+                                                    color:
+                                                        AppColors.hintTextColor,
+                                                    fontStyle:
+                                                        FontStyle.normal)),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 11),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "N20,000",
+                                            style: GoogleFonts.inter(
+                                                textStyle: const TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w400,
+                                                    color:
+                                                        AppColors.hintTextColor,
+                                                    fontStyle:
+                                                        FontStyle.normal)),
+                                          ),
+                                          TextButton(
+                                              onPressed: () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const OrderDetailsView())),
+                                              style: TextButton.styleFrom(
+                                                padding: EdgeInsets.zero,
+                                                minimumSize: Size.zero,
+                                                tapTargetSize:
+                                                    MaterialTapTargetSize
+                                                        .shrinkWrap,
+                                                primary: AppColors.textColor,
+                                                textStyle: GoogleFonts.inter(
+                                                    textStyle: const TextStyle(
+                                                        decoration:
+                                                            TextDecoration
+                                                                .underline,
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        fontStyle:
+                                                            FontStyle.normal)),
+                                              ),
+                                              child: const Text("Details")),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
+                        )
                       ],
                     ),
-                  ),
-                ),
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 16, horizontal: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Order Shipped",
-                              style: GoogleFonts.inter(
-                                  textStyle: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.textColor,
-                                      fontStyle: FontStyle.normal)),
-                            ),
-                            Text(
-                              "11:00 AM",
-                              style: GoogleFonts.inter(
-                                  textStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      color:
-                                          AppColors.textColor.withOpacity(0.6),
-                                      fontStyle: FontStyle.normal)),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 9),
-                          child: Text(
-                            "Order Shipped via DHL\nservice",
-                            style: GoogleFonts.inter(
-                                textStyle: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors.textColor.withOpacity(0.6),
-                                    fontStyle: FontStyle.normal)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 16, horizontal: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Order Delivered",
-                              style: GoogleFonts.inter(
-                                  textStyle: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.textColor,
-                                      fontStyle: FontStyle.normal)),
-                            ),
-                            Text(
-                              "12:00 PM",
-                              style: GoogleFonts.inter(
-                                  textStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      color:
-                                          AppColors.textColor.withOpacity(0.6),
-                                      fontStyle: FontStyle.normal)),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 9, bottom: 100),
-                          child: Text(
-                            "Order delivered at the\nware house in canada",
-                            style: GoogleFonts.inter(
-                                textStyle: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors.textColor.withOpacity(0.6),
-                                    fontStyle: FontStyle.normal)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
             ],
           ),
         ),
