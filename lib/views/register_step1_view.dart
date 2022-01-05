@@ -100,32 +100,6 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4))),
               ),
-              //company
-              Padding(
-                padding: const EdgeInsets.only(top: 19, bottom: 4),
-                child: Text(
-                  "Company",
-                  style: GoogleFonts.inter(
-                      textStyle: const TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.textColor,
-                          fontStyle: FontStyle.normal)),
-                ),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    hintText: "Enter Value",
-                    hintStyle: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.hintTextColor,
-                            fontStyle: FontStyle.normal)),
-                    contentPadding: const EdgeInsets.only(left: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4))),
-              ),
               //phone number
               Padding(
                 padding: const EdgeInsets.only(top: 19, bottom: 4),
@@ -199,6 +173,9 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                             fontWeight: FontWeight.w400,
                             color: AppColors.lightGreyColor,
                             fontStyle: FontStyle.normal)),
+                  ),
+                  const SizedBox(
+                    width: 5,
                   ),
                   InkWell(
                     onTap: () => Navigator.push(

@@ -1,3 +1,4 @@
+import 'package:agent_app/helpers/app_bar.dart';
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,23 +14,7 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: AppColors.whiteColor,
-        title: const Text("Order details"),
-        titleTextStyle: GoogleFonts.inter(
-            textStyle: const TextStyle(
-                fontSize: 18,
-                color: AppColors.appBarTextColor,
-                fontWeight: FontWeight.w600,
-                fontStyle: FontStyle.normal)),
-        centerTitle: true,
-        elevation: 0,
-        leading: BackButton(
-          onPressed: () => Navigator.pop(context),
-          color: AppColors.lightGreyColor,
-        ),
-      ),
+      appBar: customAppBar(context, "Order details"),
       body: Container(
         color: AppColors.mainColor,
         child: Column(

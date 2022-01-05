@@ -1,9 +1,11 @@
 import 'package:agent_app/helpers/app_colors.dart';
+import 'package:agent_app/views/sign_in.dart';
 import 'package:agent_app/views/verify_email_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class IdentityView extends StatefulWidget {
   const IdentityView({Key? key}) : super(key: key);
@@ -101,7 +103,7 @@ class _IdentityViewState extends State<IdentityView> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 115, bottom: 28),
+                padding: const EdgeInsets.only(top: 80, bottom: 30),
                 child: btnWidget(context, "Submit", onTap: () {
                   Navigator.push(
                       context,
@@ -122,15 +124,26 @@ class _IdentityViewState extends State<IdentityView> {
                             color: AppColors.lightGreyColor,
                             fontStyle: FontStyle.normal)),
                   ),
-                  Text(
-                    "Sign in",
-                    style: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.lightGreyColor,
-                            fontStyle: FontStyle.normal)),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        PageTransition(
+                            child: const SignInView(),
+                            type: PageTransitionType.rightToLeft,
+                            duration: const Duration(milliseconds: 400))),
+                    child: Text(
+                      "Sign in",
+                      style: GoogleFonts.inter(
+                          textStyle: const TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.lightGreyColor,
+                              fontStyle: FontStyle.normal)),
+                    ),
                   ),
                 ],
               ),
