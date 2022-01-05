@@ -22,12 +22,13 @@ class _SignInViewState extends State<SignInView> {
       backgroundColor: AppColors.mainColor,
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 23),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 200,
+                height: 150,
               ),
               Text(
                 "Sign In",
@@ -40,7 +41,7 @@ class _SignInViewState extends State<SignInView> {
               ),
               //email
               Padding(
-                padding: const EdgeInsets.only(top: 30, bottom: 9),
+                padding: const EdgeInsets.only(top: 30, bottom: 10),
                 child: Text(
                   "Email Address",
                   style: GoogleFonts.inter(
@@ -66,7 +67,7 @@ class _SignInViewState extends State<SignInView> {
               ),
               //password
               Padding(
-                padding: const EdgeInsets.only(top: 19, bottom: 4),
+                padding: const EdgeInsets.only(top: 19, bottom: 10),
                 child: Text(
                   "Password",
                   style: GoogleFonts.inter(
@@ -135,7 +136,7 @@ class _SignInViewState extends State<SignInView> {
                           textStyle: const TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.greyColor,
+                              color: AppColors.btnColor,
                               fontStyle: FontStyle.normal)),
                     ),
                   ],
@@ -162,6 +163,9 @@ class _SignInViewState extends State<SignInView> {
                             fontWeight: FontWeight.w400,
                             color: AppColors.lightGreyColor,
                             fontStyle: FontStyle.normal)),
+                  ),
+                  const SizedBox(
+                    width: 5,
                   ),
                   InkWell(
                     onTap: () => Navigator.push(

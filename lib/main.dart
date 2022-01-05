@@ -1,4 +1,4 @@
-import 'package:agent_app/views/onboarding1_view.dart';
+import 'package:agent_app/views/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
-      home: const Onboarding1(),
+      home: const SplashScreen(),
     );
   }
 }
