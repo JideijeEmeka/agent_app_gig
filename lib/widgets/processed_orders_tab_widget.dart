@@ -1,4 +1,5 @@
 import 'package:agent_app/helpers/app_colors.dart';
+import 'package:agent_app/views/update_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -101,7 +102,13 @@ Widget processedTabView(BuildContext context) {
                           SizedBox(
                             width: MediaQuery.of(context).size.width,
                             child: OutlinedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const UpdateStatus()));
+                              },
                               child: const Text("Update order status"),
                               style: OutlinedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
