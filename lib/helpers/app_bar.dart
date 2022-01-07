@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 customAppBar(
   BuildContext context,
   title,
+  {leading}
 ) {
   return AppBar(
     automaticallyImplyLeading: false,
@@ -18,9 +19,5 @@ customAppBar(
             fontStyle: FontStyle.normal)),
     centerTitle: true,
     elevation: 0,
-    leading: BackButton(
-      onPressed: () => Navigator.pop(context),
-      color: AppColors.lightGreyColor,
-    ),
   );
 }
