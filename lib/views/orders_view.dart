@@ -24,10 +24,6 @@ class _OrdersViewState extends State<OrdersView> {
                 centerTitle: true,
                 elevation: 0.0,
                 backgroundColor: AppColors.mainColor,
-                leading: BackButton(
-                  onPressed: () => Navigator.pop(context),
-                  color: AppColors.lightGreyColor,
-                ),
                 title: const Text(
                   "Orders",
                 ),
