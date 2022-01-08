@@ -1,5 +1,4 @@
 import 'package:agent_app/helpers/app_colors.dart';
-import 'package:agent_app/views/home_view.dart';
 import 'package:agent_app/views/my_account_view.dart';
 import 'package:agent_app/views/orders_view.dart';
 import 'package:agent_app/views/track_order_view.dart';
@@ -16,7 +15,6 @@ class NavBar extends StatefulWidget {
 int _currentIndex = 0;
 
 List screens = [
-  const HomeView(),
   const TrackOrderView(),
   const OrdersView(),
   const MyAccountView(),
@@ -58,14 +56,6 @@ class _NavBarState extends State<NavBar> {
                 backgroundColor: Colors.white,
                 selectedItemColor: AppColors.appBarTextColor,
                 items: const [
-                  BottomNavigationBarItem(
-                    icon: ImageIcon(
-                      AssetImage(
-                        'assets/icons/home.png',
-                      ),
-                    ),
-                    label: 'Home',
-                  ),
                   BottomNavigationBarItem(
                       icon: ImageIcon(
                         AssetImage(
