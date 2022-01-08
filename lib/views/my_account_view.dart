@@ -2,8 +2,11 @@ import 'package:agent_app/helpers/app_bar.dart';
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/about.dart';
 import 'package:agent_app/views/forgot_password_view.dart';
-import 'package:agent_app/views/orders_view.dart';
+import 'package:agent_app/views/order_history.dart';
+import 'package:agent_app/views/sign_in.dart';
+import 'package:agent_app/views/sign_out_widget.dart';
 import 'package:agent_app/widgets/settings.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +23,7 @@ class _MyAccountViewState extends State<MyAccountView> {
         leadingImage: "assets/icons/timer.png",
         title: "Order history",
         trailingImage: "assets/icons/arrowIcon.png",
-        page: const About()),
+        page: const OrderHistoryView()),
     Accounts(
       leadingImage: "assets/icons/about.png",
       title: "About us",
@@ -36,8 +39,9 @@ class _MyAccountViewState extends State<MyAccountView> {
         leadingImage: "assets/icons/signout.png",
         title: "Sign out",
         trailingImage: "assets/icons/arrowIcon.png",
-        page: const About()),
+        page: const ShowDialogBox()),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

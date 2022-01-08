@@ -1,5 +1,5 @@
 import 'package:agent_app/helpers/app_colors.dart';
-import 'package:agent_app/views/forgot_password_view.dart';
+import 'package:agent_app/views/dashboard.dart';
 import 'package:agent_app/views/register_step1_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
@@ -145,10 +145,11 @@ class _SignInViewState extends State<SignInView> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 28),
                 child: btnWidget(context, "Sign in", onTap: () {
+                  Navigator.pop(context);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ForgotPasswordView()));
+                          builder: (context) => const Dashboard()));
                 }),
               ),
               Row(

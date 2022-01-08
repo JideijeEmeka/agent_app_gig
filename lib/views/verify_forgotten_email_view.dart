@@ -18,12 +18,11 @@ class _VerifyEmailViewState extends State<VerifyForgottenEmailView> {
       backgroundColor: AppColors.mainColor,
       body: SingleChildScrollView(
         child: Container(
-          alignment: Alignment.center,
-          margin: const EdgeInsets.symmetric(horizontal: 23),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               const SizedBox(
-                height: 200,
+                height: 150,
               ),
               Image.asset("assets/images/email-verification.png"),
               Padding(
@@ -42,7 +41,7 @@ class _VerifyEmailViewState extends State<VerifyForgottenEmailView> {
                 "We have sent a password recovery \ninformation to your mail",
                 style: GoogleFonts.inter(
                     textStyle: const TextStyle(
-                        fontSize: 12,
+                        fontSize: 13.5,
                         height: 1.5,
                         fontWeight: FontWeight.w400,
                         color: AppColors.blackColor,
