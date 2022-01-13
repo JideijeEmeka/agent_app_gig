@@ -43,7 +43,7 @@ class _SignInViewState extends State<SignInView> {
               Padding(
                 padding: const EdgeInsets.only(top: 30, bottom: 10),
                 child: Text(
-                  "Email Address",
+                  "Email Address or Phone Number",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 12,
