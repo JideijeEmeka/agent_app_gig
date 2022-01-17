@@ -5,7 +5,7 @@ import 'package:agent_app/views/forgot_password_view.dart';
 import 'package:agent_app/views/order_history.dart';
 import 'package:agent_app/views/sign_in.dart';
 import 'package:agent_app/views/sign_out_widget.dart';
-import 'package:agent_app/widgets/settings.dart';
+import 'package:agent_app/models/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
