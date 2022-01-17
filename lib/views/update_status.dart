@@ -2,6 +2,7 @@ import 'package:agent_app/helpers/app_bar.dart';
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UpdateStatus extends StatefulWidget {
@@ -75,8 +76,9 @@ class _UpdateStatusState extends State<UpdateStatus> {
                               fontStyle: FontStyle.normal)),
                     ),
                     autovalidateMode: AutovalidateMode.onUserInteraction,
-                    icon: const Icon(
-                      Icons.arrow_back,
+                    icon: const FaIcon(
+                      FontAwesomeIcons.chevronDown,
+                      size: 15,
                       color: AppColors.blackColor,
                     ),
                     iconDisabledColor: AppColors.greyColor,
@@ -133,9 +135,9 @@ class _UpdateStatusState extends State<UpdateStatus> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 40),
-                  child: btnWidget(context, "Update"),
-                ),
+                    padding: const EdgeInsets.symmetric(vertical: 40),
+                    child: btnWidget(context, "Update",
+                        onTap: () => Navigator.pop(context))),
               ],
             ),
           ),

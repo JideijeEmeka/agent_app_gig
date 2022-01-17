@@ -167,7 +167,7 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () => {Navigator.pop(context)},
                   child: const Text("Reject"),
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(

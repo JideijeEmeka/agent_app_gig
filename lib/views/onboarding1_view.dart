@@ -20,7 +20,6 @@ class _Onboarding1State extends State<Onboarding1> {
   @override
   void initState() {
     _controller = PageController(initialPage: 0);
-
     super.initState();
   }
 
@@ -137,7 +136,7 @@ class _Onboarding1State extends State<Onboarding1> {
                 } else {
                   _controller.nextPage(
                       duration: const Duration(milliseconds: 400),
-                      curve: Curves.easeInCubic);
+                      curve: Curves.easeInCubic,);
                 }
               })),
           Padding(
