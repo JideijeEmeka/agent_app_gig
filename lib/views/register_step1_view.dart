@@ -1,5 +1,5 @@
 import 'package:agent_app/helpers/app_colors.dart';
-import 'package:agent_app/views/register_step2_view.dart';
+import 'package:agent_app/views/identity_view.dart';
 import 'package:agent_app/views/sign_in.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +39,7 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
               Padding(
                 padding: const EdgeInsets.only(top: 7),
                 child: Text(
-                  "Step 1 of 3",
+                  "Step 1 of 2",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 14,
@@ -48,37 +48,11 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                           fontStyle: FontStyle.normal)),
                 ),
               ),
-              //first name
+              //full name
               Padding(
                 padding: const EdgeInsets.only(top: 19, bottom: 4),
                 child: Text(
-                  "First Name",
-                  style: GoogleFonts.inter(
-                      textStyle: const TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.textColor,
-                          fontStyle: FontStyle.normal)),
-                ),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    hintText: "Enter Value",
-                    hintStyle: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.hintTextColor,
-                            fontStyle: FontStyle.normal)),
-                    contentPadding: const EdgeInsets.only(left: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4))),
-              ),
-              //last name
-              Padding(
-                padding: const EdgeInsets.only(top: 19, bottom: 4),
-                child: Text(
-                  "Last Name",
+                  "Full Name",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 12,
@@ -126,11 +100,63 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4))),
               ),
-              //address
+              //email
               Padding(
                 padding: const EdgeInsets.only(top: 19, bottom: 4),
                 child: Text(
-                  "Address",
+                  "Email Address",
+                  style: GoogleFonts.inter(
+                      textStyle: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.textColor,
+                          fontStyle: FontStyle.normal)),
+                ),
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                    hintText: "Enter Value",
+                    hintStyle: GoogleFonts.inter(
+                        textStyle: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.hintTextColor,
+                            fontStyle: FontStyle.normal)),
+                    contentPadding: const EdgeInsets.only(left: 16),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4))),
+              ),
+              //state
+              Padding(
+                padding: const EdgeInsets.only(top: 19, bottom: 4),
+                child: Text(
+                  "State",
+                  style: GoogleFonts.inter(
+                      textStyle: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.textColor,
+                          fontStyle: FontStyle.normal)),
+                ),
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                    hintText: "Enter Value",
+                    hintStyle: GoogleFonts.inter(
+                        textStyle: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.hintTextColor,
+                            fontStyle: FontStyle.normal)),
+                    contentPadding: const EdgeInsets.only(left: 16),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4))),
+              ),
+              //password
+              Padding(
+                padding: const EdgeInsets.only(top: 19, bottom: 4),
+                child: Text(
+                  "Password",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 12,
@@ -158,7 +184,7 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const RegisterStep2View()));
+                          builder: (context) => const IdentityView()));
                 }),
               ),
               Row(

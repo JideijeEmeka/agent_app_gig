@@ -8,7 +8,7 @@ import 'package:page_transition/page_transition.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({Key? key}) : super(key: key);
-
+  
   @override
   _ForgotPasswordViewState createState() => _ForgotPasswordViewState();
 }

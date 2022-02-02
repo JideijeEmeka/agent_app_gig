@@ -1,8 +1,10 @@
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/dashboard.dart';
+import 'package:agent_app/views/sign_in.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CreatePasswordView extends StatefulWidget {
   const CreatePasswordView({Key? key}) : super(key: key);
@@ -77,15 +79,30 @@ class _VerifyEmailViewState extends State<CreatePasswordView> {
                         borderRadius: BorderRadius.circular(4))),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                ),
+                padding: const EdgeInsets.only(top: 20, bottom: 50),
                 child: btnWidget(context, "Create new password", onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const Dashboard()));
                 }),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    PageTransition(
+                        child: const SignInView(),
+                        type: PageTransitionType.leftToRight,
+                        duration: const Duration(milliseconds: 400))),
+                child: Text(
+                  "Go back to Login",
+                  style: GoogleFonts.inter(
+                      textStyle: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.blackColor,
+                          fontStyle: FontStyle.normal)),
+                ),
               ),
             ],
           ),

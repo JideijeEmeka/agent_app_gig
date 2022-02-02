@@ -1,6 +1,6 @@
 import 'package:agent_app/helpers/app_colors.dart';
+import 'package:agent_app/views/otp.dart';
 import 'package:agent_app/views/sign_in.dart';
-import 'package:agent_app/views/verify_email_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +108,7 @@ class _IdentityViewState extends State<IdentityView> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const VerifyEmailView()));
+                          builder: (context) => const Otp()));
                 }),
               ),
               Row(

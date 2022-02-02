@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/dashboard.dart';
+import 'package:agent_app/views/forgot_password_view.dart';
 import 'package:agent_app/views/register_step1_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +95,7 @@ class _SignInViewState extends State<SignInView> {
                         borderRadius: BorderRadius.circular(4))),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 41, bottom: 30),
+                padding: const EdgeInsets.only(top: 30, bottom: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -122,7 +125,7 @@ class _SignInViewState extends State<SignInView> {
                             "Remember me",
                             style: GoogleFonts.inter(
                                 textStyle: const TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w400,
                                     color: AppColors.greyColor,
                                     fontStyle: FontStyle.normal)),
@@ -130,15 +133,22 @@ class _SignInViewState extends State<SignInView> {
                         ),
                       ],
                     ),
-                    Text(
-                      "Forgot Password?",
-                      style: GoogleFonts.inter(
+                    TextButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ForgotPasswordView())),
+                      style: TextButton.styleFrom(
+                          primary: AppColors.greyColor,
                           textStyle: const TextStyle(
-                              fontSize: 12,
+                              fontSize: 13,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.btnColor,
                               fontStyle: FontStyle.normal)),
-                    ),
+                      child: const Text(
+                        "Forgot Password?",
+                      ),
+                    )
                   ],
                 ),
               ),

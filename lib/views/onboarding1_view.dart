@@ -118,7 +118,7 @@ class _Onboarding1State extends State<Onboarding1> {
                   ),
                 );
               },
-            ),
+            ),   
           ),
           Padding(
               padding: const EdgeInsets.only(
@@ -128,7 +128,7 @@ class _Onboarding1State extends State<Onboarding1> {
                   onTap: () {
                 if (currentIndex == contents.length - 1) {
                   Navigator.push(
-                      context,
+                      context,   
                       PageTransition(
                           child: const Onboarding4(),
                           type: PageTransitionType.bottomToTop,
