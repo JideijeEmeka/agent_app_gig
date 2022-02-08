@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:agent_app/arguments/otp_args.dart';
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/congratulations_view.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
@@ -6,13 +9,32 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class Otp extends StatefulWidget {
-  const Otp({Key? key}) : super(key: key);
+  final OtpArgument args;
+
+  const Otp({Key? key, required this.args}) : super(key: key);
 
   @override
   _OtpState createState() => _OtpState();
 }
 
+String verificationCodes = "";
+FocusNode verificationCodeFocusNode = FocusNode();
+TextEditingController verificationInputController = TextEditingController();
+
 class _OtpState extends State<Otp> {
+  @override
+  void initState() {
+    // errorAnimationController = StreamController<ErrorAnimationType>();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // errorAnimationController!.close();
+    verificationInputController.clear();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,11 +77,21 @@ class _OtpState extends State<Otp> {
                   borderRadius: BorderRadius.circular(6),
                 ),
                 enableActiveFill: false,
+                obscureText: true,
+                controller: verificationInputController,
+                focusNode: verificationCodeFocusNode,
+                // errorAnimationController: errorAnimationController,
+                validator: (v) {
+                  if (v!.isEmpty) {
+                    return "Invalid verification code";
+                  }
+                  return null;
+                },
                 backgroundColor: Colors.transparent,
                 keyboardType: TextInputType.number,
                 boxShadows: const [
                   BoxShadow(
-                    offset: Offset(0, 0),
+                    offset: Offset(0, 3),
                     color: AppColors.lightGreyColor,
                     blurRadius: 50,
                   ),
@@ -67,12 +99,18 @@ class _OtpState extends State<Otp> {
                 blinkWhenObscuring: true,
                 animationType: AnimationType.slide,
                 onCompleted: (v) {},
-                onChanged: (val) {}),
+                onChanged: (val) {
+                  setState(() {
+                    verificationCodes = val;
+                  });
+                }),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 40),
-              child: btnWidget(context, "Verify account", onTap: () => 
-              Navigator.push(context, MaterialPageRoute(builder: 
-              (context) => const CongratulationsView()))),
+              child: btnWidget(context, "Verify account",
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CongratulationsView()))),
             )
           ],
         ),
