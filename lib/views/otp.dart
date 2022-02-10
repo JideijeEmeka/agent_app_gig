@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:agent_app/arguments/otp_args.dart';
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/congratulations_view.dart';
