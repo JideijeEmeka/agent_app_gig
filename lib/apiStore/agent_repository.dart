@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 class ApiStore {
   void agentReg() async {
     var headers = {
-      "authorization": "388b77473d46a13724192ae7735219a2ecae7a1b",
+      "authorization": "Bearer 388b77473d46a13724192ae7735219a2ecae7a1b",
       "x-meta-service": "Authentication",
       "x-meta-method": "Register as an agent"
     };
@@ -25,6 +25,7 @@ class ApiStore {
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
+      ///Route
       print(await response.stream.bytesToString());
     } else {
       print(response.reasonPhrase);
@@ -33,7 +34,7 @@ class ApiStore {
 
   void verifyOtp(String token, String email) async {
     var headers = {
-      "authorization": "388b77473d46a13724192ae7735219a2ecae7a1b",
+      "authorization": "Bearer 388b77473d46a13724192ae7735219a2ecae7a1b",
       "x-meta-service": "Authentication",
       "x-meta-method": "Verify account email otp"
     };
@@ -52,7 +53,7 @@ class ApiStore {
 
   void signIn(String email, String password) async {
     var headers = {
-      "authorization": "388b77473d46a13724192ae7735219a2ecae7a1b",
+      "authorization": "Bearer 388b77473d46a13724192ae7735219a2ecae7a1b",
       "x-meta-service": "Authentication",
       "x-meta-method": "Account login"
     };
@@ -71,7 +72,7 @@ class ApiStore {
 
   void forgetPassword(String email) async {
     var headers = {
-      "authorization": "388b77473d46a13724192ae7735219a2ecae7a1b",
+      "authorization": "Bearer 388b77473d46a13724192ae7735219a2ecae7a1b",
       "x-meta-service": "Authentication",
       "x-meta-method": "Reset existing password"
     };
@@ -90,7 +91,7 @@ class ApiStore {
 
   createNewPassword() async {
     var headers = {
-      "authorization": "388b77473d46a13724192ae7735219a2ecae7a1b",
+      "authorization": "Bearer 388b77473d46a13724192ae7735219a2ecae7a1b",
       "x-meta-service": "Authentication",
       "x-meta-method": "Create new password"
     };

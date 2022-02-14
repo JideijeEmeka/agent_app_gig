@@ -1,6 +1,4 @@
 import 'package:agent_app/views/dashboard.dart';
-import 'package:agent_app/views/identity_view.dart';
-import 'package:agent_app/views/sign_in.dart';
 import 'package:flutter/material.dart';
 
 GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
