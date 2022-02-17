@@ -8,7 +8,7 @@ import 'package:page_transition/page_transition.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({Key? key}) : super(key: key);
-  
+
   @override
   _ForgotPasswordViewState createState() => _ForgotPasswordViewState();
 }
@@ -43,7 +43,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 30),
                 child: Text(
-                  "Enter your registered email below to \nrecieve passord reset information",
+                  "Enter your registered email below to receive passord reset information",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 13.5,
