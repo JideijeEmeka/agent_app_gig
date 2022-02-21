@@ -1,7 +1,13 @@
+import 'package:agent_app/arguments/otp_args.dart';
+import 'package:agent_app/views/congratulations_view.dart';
+import 'package:agent_app/views/identity_view.dart';
+import 'package:agent_app/views/otp.dart';
+import 'package:agent_app/views/register_step1_view.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class ApiStore {
-  void agentReg() async {
+  void agentReg(BuildContext context) async {
     var headers = {
       "authorization": "Bearer 388b77473d46a13724192ae7735219a2ecae7a1b",
       "x-meta-service": "Authentication",
@@ -11,28 +17,32 @@ class ApiStore {
         'POST', Uri.parse('https://server2.trackhub.ng/api'));
     request.headers.addAll(headers);
     request.fields.addAll({
-      "firstname": "",
-      "lastname": "",
-      "phone": "",
-      "address": "",
-      "countryCode": "",
-      "stateid": "",
-      "email": "",
-      "password": "",
-      "password_again": "",
-      "display_image": ""
+      "firstname": name,
+      "lastname": name,
+      "phone": "$phoneNumber",
+      "address": state,
+      "countryCode": "234",
+      "stateid": state,
+      "email": email,
+      "password": password,
+      "password_again": password,
+      "display_image": "$image"
     });
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
       ///Route
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Otp(args: OtpArgument(email: email))));
       print(await response.stream.bytesToString());
     } else {
       print(response.reasonPhrase);
     }
   }
 
-  void verifyOtp(String token, String email) async {
+  void verifyOtp(String email, BuildContext context) async {
     var headers = {
       "authorization": "Bearer 388b77473d46a13724192ae7735219a2ecae7a1b",
       "x-meta-service": "Authentication",
@@ -41,10 +51,12 @@ class ApiStore {
     var request = http.MultipartRequest(
         'POST', Uri.parse('https://server2.trackhub.ng/api'));
     request.headers.addAll(headers);
-    request.fields.addAll({"otp": token, "email": email});
+    request.fields.addAll({"otp": verificationCodes, "email": email});
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
+      // Navigator.push(context,
+      //     MaterialPageRoute(builder: (context) => const CongratulationsView()));
       print(await response.stream.bytesToString());
     } else {
       print(response.reasonPhrase);
