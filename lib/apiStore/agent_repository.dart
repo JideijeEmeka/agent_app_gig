@@ -42,7 +42,7 @@ class ApiStore {
     }
   }
 
-  void verifyOtp(String email, BuildContext context) async {
+  void verifyOtp(String email, String otpToken, BuildContext context) async {
     var headers = {
       "authorization": "Bearer 388b77473d46a13724192ae7735219a2ecae7a1b",
       "x-meta-service": "Authentication",
@@ -51,7 +51,7 @@ class ApiStore {
     var request = http.MultipartRequest(
         'POST', Uri.parse('https://server2.trackhub.ng/api'));
     request.headers.addAll(headers);
-    request.fields.addAll({"otp": verificationCodes, "email": email});
+    request.fields.addAll({"otp": otpToken, "email": email});
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
