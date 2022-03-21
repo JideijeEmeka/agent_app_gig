@@ -20,6 +20,8 @@ String name = "";
 String email = "";
 String state = "";
 String password = "";
+String confirmPassword = "";
+
 PhoneNumber phoneNumber = PhoneNumber();
 TextEditingController phoneNumberController = TextEditingController();
 
@@ -248,6 +250,7 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                       password = val;
                     });
                   },
+                  obscureText: true,
                   decoration: InputDecoration(
                       hintText: "Enter Value",
                       hintStyle: GoogleFonts.inter(
@@ -264,10 +267,7 @@ class _RegisterStep1ViewState extends State<RegisterStep1View> {
                   padding: const EdgeInsets.symmetric(vertical: 28),
                   child: btnWidget(context, "Next", onTap: () {
                     // register();
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const IdentityView()));
+                    register(context);
                   }),
                 ),
                 Row(

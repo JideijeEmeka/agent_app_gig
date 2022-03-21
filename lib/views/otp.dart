@@ -1,3 +1,4 @@
+import 'package:agent_app/apiStore/agent_repository.dart';
 import 'package:agent_app/arguments/otp_args.dart';
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/congratulations_view.dart';
@@ -15,9 +16,9 @@ class Otp extends StatefulWidget {
   _OtpState createState() => _OtpState();
 }
 
-String verificationCodes = "";
 FocusNode verificationCodeFocusNode = FocusNode();
 TextEditingController verificationInputController = TextEditingController();
+ApiStore apiStore = ApiStore();
 
 class _OtpState extends State<Otp> {
   @override
@@ -99,16 +100,16 @@ class _OtpState extends State<Otp> {
                 onCompleted: (v) {},
                 onChanged: (val) {
                   setState(() {
-                    verificationCodes = val;
+                    verificationInputController.text = val;
                   });
                 }),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 40),
               child: btnWidget(context, "Verify account",
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CongratulationsView()))),
+                  onTap: () => {
+                        apiStore.verifyOtp(widget.args.email as String,
+                            verificationInputController.text, context)
+                      }),
             )
           ],
         ),
