@@ -40,7 +40,7 @@ class _VerifyEmailViewState extends State<VerifyForgottenEmailView> {
                 ),
               ),
               Text(
-                "We have sent a password recovery \ninformation to your mail",
+                "We have sent a password recovery information to your mail",
                 style: GoogleFonts.inter(
                     textStyle: const TextStyle(
                         fontSize: 13.5,
