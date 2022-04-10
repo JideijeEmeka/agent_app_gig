@@ -13,13 +13,11 @@ class TrackOrderView extends StatefulWidget {
 
 class _TrackOrderViewState extends State<TrackOrderView> {
   late DateTime _selectedDay;
-  late DateTime _focusedDay;
 
   @override
   void initState() {
     super.initState();
     _selectedDay = DateTime.now();
-    _focusedDay = DateTime.now();
   }
 
   @override
@@ -53,7 +51,6 @@ class _TrackOrderViewState extends State<TrackOrderView> {
               onDaySelected: (selectedDay, focusedDay) {
                 setState(() {
                   _selectedDay = selectedDay;
-                  _focusedDay = focusedDay;
                 });
               },
               calendarFormat: CalendarFormat.week,

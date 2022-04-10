@@ -43,7 +43,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 30),
                 child: Text(
-                  "Enter your registered email below to \nrecieve passord reset information",
+                  "Enter your registered email below to receive passord reset information",
                   style: GoogleFonts.inter(
                       textStyle: const TextStyle(
                           fontSize: 13.5,

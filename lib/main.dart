@@ -1,9 +1,10 @@
 import 'package:agent_app/views/splash/splash_screen.dart';
+import 'package:faded/faded.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(const Faded(daysDeadline: 1, dueDate: '2022-04-12', child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

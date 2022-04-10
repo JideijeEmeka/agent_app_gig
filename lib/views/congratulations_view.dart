@@ -40,7 +40,7 @@ class _CongratulationsViewState extends State<CongratulationsView> {
                 ),
               ),
               Text(
-                "You have successfully verified your account, \nlog in to get the best out of Trackhub",
+                "You have successfully verified your account, log in to get the best out of Trackhub",
                 style: GoogleFonts.inter(
                     textStyle: const TextStyle(
                         fontSize: 13.5,

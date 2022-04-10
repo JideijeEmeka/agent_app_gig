@@ -1,8 +1,10 @@
 import 'package:agent_app/helpers/app_colors.dart';
 import 'package:agent_app/views/create_password_view.dart';
+import 'package:agent_app/views/sign_in.dart';
 import 'package:agent_app/widgets/btn_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class VerifyForgottenEmailView extends StatefulWidget {
   const VerifyForgottenEmailView({Key? key}) : super(key: key);
@@ -38,7 +40,7 @@ class _VerifyEmailViewState extends State<VerifyForgottenEmailView> {
                 ),
               ),
               Text(
-                "We have sent a password recovery \ninformation to your mail",
+                "We have sent a password recovery information to your mail",
                 style: GoogleFonts.inter(
                     textStyle: const TextStyle(
                         fontSize: 13.5,
@@ -48,13 +50,30 @@ class _VerifyEmailViewState extends State<VerifyForgottenEmailView> {
                         fontStyle: FontStyle.normal)),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30, bottom: 30),
+                padding: const EdgeInsets.only(top: 30, bottom: 50),
                 child: btnWidget(context, "Open email app", onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const CreatePasswordView()));
                 }),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    PageTransition(
+                        child: const SignInView(),
+                        type: PageTransitionType.leftToRight,
+                        duration: const Duration(milliseconds: 400))),
+                child: Text(
+                  "Go back to Login",
+                  style: GoogleFonts.inter(
+                      textStyle: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.blackColor,
+                          fontStyle: FontStyle.normal)),
+                ),
               ),
             ],
           ),

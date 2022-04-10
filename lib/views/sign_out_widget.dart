@@ -37,10 +37,11 @@ class _ShowDialogBoxState extends State<ShowDialogBox> {
                     )),
                 TextButton(
                     onPressed: () => {
+                          Navigator.pop(context),
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (_) => const SignInView()))
+                                  builder: (context) => const SignInView()))
                         },
                     child: Text(
                       "Yes",
